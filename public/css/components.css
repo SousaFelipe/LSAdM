@@ -1,0 +1,198 @@
+
+
+.badge {
+    font-weight: 600;
+}
+
+
+.badge.blue,
+.badge.blue > * {
+    background-color: var(--lsp-blue-two);
+    color:  var(--lsp-blue-one);
+    fill:   var(--lsp-blue-ene);
+}
+
+.badge.cyan,
+.badge.cyan > * {
+    background-color: var(--lsp-cyan-two);
+    color:  var(--lsp-cyan-one);
+    fill:   var(--lsp-cyan-one);
+}
+
+.badge.green,
+.badge.green > * {
+    background-color: var(--lsp-green-two);
+    color:  var(--lsp-green-one);
+    fill:   var(--lsp-green-one);
+}
+
+.badge.teal,
+.badge.teal > * {
+    background-color: var(--lsp-teal-two);
+    color:  var(--lsp-teal-one);
+    fill:   var(--lsp-teal-one);
+}
+
+.badge.yellow,
+.badge.yellow > * {
+    background-color: var(--lsp-yellow-two);
+    color:  var(--lsp-yellow-one);
+    fill:   var(--lsp-yellow-one);
+}
+
+.badge.red,
+.badge.red > * {
+    background-color: var(--lsp-badge-two);
+    color:  var(--lsp-red-one);
+    fill:   var(--lsp-red-one);
+}
+
+.badge.purple,
+.badge.purple > * {
+    background-color: var(--lsp-purple-two);
+    color:  var(--lsp-purple-one);
+    fill:   var(--lsp-purple-one);
+}
+
+
+.badge.sm {
+    padding:        2px 6px;
+    border-radius:  2px;
+    font-size:      var(--px10);
+}
+
+.badge.md {
+    padding:        4px 8px;
+    border-radius:  4px;
+    font-size:      var(--px12);
+}
+
+.badge.lg {
+    padding:        6px 12px;
+    border-radius:  6px;
+    font-size:      var(--px14);
+}
+
+
+
+
+
+.btn {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    border:             none;
+    font-family:        'Montserrat';
+    font-weight:        500;
+    cursor:             pointer;
+}
+
+.btn.md {
+    padding:        0.74em 1.5em;
+    border-radius:  0.5em;
+}
+
+.btn.bg-blue-one       { color: white; fill: white; }
+.btn.bg-blue-one:hover {
+    transition:         background-color 0.25s ease-in;
+    background-color:   #2C80FF;
+}
+
+.btn.bg-blue-two { color: var(--lsp-blue-one); fill: var(--lsp-blue-one); }
+
+
+
+
+
+.form-control {
+    outline:            none;
+    border:             1px solid var(--lsp-border-light);
+    background-color:   transparent !important;
+}
+
+.form-control:focus {
+    border-color:   var(--lsp-blue-one);
+    transition:     all 0.2s ease-in;
+}
+
+.form-control,
+.form-control-md {
+    width:          100%;
+    height:         2.75em;
+    min-width:      18.75em;
+    min-height:     2.75em;
+    padding-left:   1.25em;
+    padding-right:  1.25em;
+    border-radius:  0.50em;
+}
+
+
+.form-label {
+    font-size:      var(--fs-xs);
+    font-weight:    600;
+    color:          var(--text-secondary);
+    padding-bottom: 0.5em;
+}
+
+
+.form-text {
+    font-size:      var(--fs-xxs);
+    color:          var(--text-secondary);
+    padding-top:    0.5em;
+}
+
+
+
+
+
+.spinner,
+.spinner:after {
+    position:       absolute;
+    border-radius:  50%;
+    width:          1em;
+    height:         1em;
+}
+
+.spinner {
+    font-size:          0.683em;
+    position:           relative;
+    border-top:         1.1em solid rgba(255, 255, 255, 0.2);
+    border-right:       1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom:      1.1em solid rgba(255, 255, 255, 0.2);
+    border-left:        1.1em solid #FFFFFF;
+    -webkit-transform:  translateZ(0);
+    -ms-transform:      translateZ(0);
+    transform:          translateZ(0);
+    -webkit-animation:  spin 1.1s infinite linear;
+    animation:          spin 1.1s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform:  rotate(0deg);
+        transform:          rotate(0deg);
+    }
+    100% {
+        -webkit-transform:  rotate(360deg);
+        transform:          rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform:  rotate(0deg);
+        transform:          rotate(0deg);
+    }
+    100% {
+        -webkit-transform:  rotate(360deg);
+        transform:          rotate(360deg);
+    }
+}
+
+
+
+
+
+.text-primary   { color: var(--text-primary);   fill: val(--text-primary);   }
+.text-secondary { color: var(--text-secondary); fill: val(--text-secondary); }
+.text-tertiary  { color: var(--text-tertiary);  fill: val(--text-tertiary);  }
