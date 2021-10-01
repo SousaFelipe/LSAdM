@@ -8,24 +8,23 @@
     height:             100%;
 }
 
-
 .sign-in-background {
     flex-grow:              1;
-    background-image:       url('http://127.0.0.1:8000/assets/images/sign-in.svg');
+    background-image:       url('/assets/images/sign-in.svg');
     background-position:    center;
     background-repeat:      no-repeat;
-    background-size:        calc(100% - 300px) calc(100% - 300px);
+    background-size:        60% 60%;
 }
 
 .sign-in-container {
     display:            flex;
     flex-direction:     column;
     justify-content:    center;
-    width:              490px;
-    padding-left:       60px;
-    padding-right:      60px;
+    padding-left:       80px;
+    padding-right:      80px;
     background-color:   var(--lsp-secondary);
 }
+
 
 
 @media screen and (max-width: 979.98px) {
@@ -40,5 +39,21 @@
 
     .sign-in-container {
         background-color: var(--lsp-primary);
+    }
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .sign-in-container {
+        width: 490px;
+    }
+}
+
+
+
+@media screen and (min-width: 1279.98px) {
+    .sign-in-container {
+        width: 640px;
     }
 }

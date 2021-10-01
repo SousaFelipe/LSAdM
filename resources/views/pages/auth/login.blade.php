@@ -10,6 +10,17 @@
 
 
 @section('content')
+
+    <div class="alert-container">
+        <div id="statusLoginAlert" class="alert bg-red-one" role="alert">
+            <div id="statusLoginAlertBody" class="alert-body text-white"></div>
+            <button class="btn-close" data-spark-close="statusLoginAlert">
+                <span class="icon-md icn-close"></span>
+            </button>
+        </div>
+    </div>
+
+
     <div class="form-sign-in">
 
         <div class="sign-in-background"></div>
@@ -43,7 +54,7 @@
                 </form>
 
                 <div class="flex-row justify-between align-end mt-4">
-                    <button type="button" class="btn md bg-blue-one" onclick="login('formSignIn')">Entrar</button>
+                    <button type="button" id="btnLogin" class="btn md bg-blue-one" onclick="login(this)">Entrar</button>
                     <a href="#" class="fs-xs unblock">Esqueceu sua senha?</a>
                 </div>
 
@@ -51,4 +62,12 @@
         </div>
 
     </div>
+@endsection
+
+
+
+@section('layout-scripts')
+    <script src="{{ asset('js/src/components/Alert.js') }}"></script>
+    <script src="{{ asset('js/src/components/Request.js') }}"></script>
+    <script src="{{ asset('js/src/pages/login.js') }}"></script>
 @endsection

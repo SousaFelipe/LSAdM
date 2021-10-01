@@ -1,5 +1,28 @@
 
 
+
+
+.alert-container {
+    position:           absolute;
+    display:            flex;
+    justify-content:    center;
+    width:              100%;
+    padding-top:        30px;
+}
+
+.alert {
+    display:            none;
+    flex-direction:     row;
+    justify-content:    flex-start;
+    align-items:        center;
+    padding:            var(--px20);
+    border-radius:      var(--px8);
+}
+
+
+
+
+
 .badge {
     font-weight: 600;
 }

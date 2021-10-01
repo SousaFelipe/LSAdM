@@ -5,6 +5,7 @@
     <meta name="description" content="Responsive Admin Dashboard Template">
     <meta name="keywords" content="provedor,admin,ixc">
     <meta name="author" content="Felipe Sousa">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title> Light Spark - @yield('title') </title>
 

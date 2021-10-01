@@ -48,7 +48,7 @@ class LoginController extends Controller
                 ]);
             }
             else if ($auth) {
-                return redirect()->intended(URL::route('admin'));
+                return redirect()->intended(URL::route('admin.page'));
             }
         }
         else return response()->json([
