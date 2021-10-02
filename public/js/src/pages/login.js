@@ -1,11 +1,22 @@
 
 
 
-const statusAlert = new Alert('statusLoginAlert', 5)
+let statusAlert = null
+let loginButton = null
 
 
 
-let login = function (target) {
+$(function () {
+
+    statusAlert = new Alert('statusLoginAlert', 5)
+    loginButton = window.APP.component('button', 'btnLogin')
+
+})
+
+
+
+let login = function () {
+    let progressBar = new Progress('loginProgress')
 
     const credentials = getValidated(
         document.getElementById('inputEmail').value,
@@ -13,12 +24,18 @@ let login = function (target) {
     )
 
     if (credentials) {
-        window.APP.button('btnLogin').setLoding(true)
-        new Request('auth', credentials).post(response => handleAuthentication(response, target))
+        new Request('auth', credentials).post(
+            response => {
+                handleAuthentication(response)
+                progressBar.reset()
+            },
+            progress => {
+                progressBar.load(progress * 100)
+            }
+        )
     }
     else {
         statusAlert.display(`Preencha os campos <b>Email</b> e <b>Senha</b>!`)
-        target.removeAttribute('disabled')
     }
 }
 
@@ -37,17 +54,13 @@ let handleAuthentication = function (response, target) {
         window.APP.form('formSignIn').submit()
     }
     else {
-
         if (response.errors.email) {
-            window.APP.input('inputEmail').invalidate()
+            window.APP.component('input', 'inputEmail').invalidate()
             statusAlert.display(response.errors.email)
         }
         else if (response.errors.password) {
-            window.APP.input('inputPassword').invalidate()
+            window.APP.component('input', 'inputPassword').invalidate()
             statusAlert.display(response.errors.password)
         }
-
-        target.removeAttribute('disabled')
-        window.APP.button('btnEnter').setLoding(false)
     }
 }

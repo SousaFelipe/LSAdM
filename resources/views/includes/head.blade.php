@@ -24,4 +24,5 @@
     <link href="{{ asset('css/custom/scrollbar.css') }}" rel="stylesheet">
 
     @yield('head-styles')
+    @yield('frame-styles')
 </head>

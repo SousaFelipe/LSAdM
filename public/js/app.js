@@ -17,42 +17,15 @@ $(function () {
                 }
             },
 
-            input: (id) => {
+            component: (type, id) => {
                 const element = document.getElementById(id)
 
-                return {
-
-                    invalidate: () => {
-                        element.classList.add('is-invalid')
-                        element.addEventListener('change', function(e) {
-                            element.classList.remove('is-invalid')
-                            element.removeEventListener('change', e)
-                        })
-                    }
+                const components = {
+                    'button':   () => buttonComponent(element),
+                    'input':    () => inputComponent(element)
                 }
-            },
 
-            button: (id) => {
-                const element = document.getElementById(id)
-
-                return {
-                    setLoding: (loading, disabled = true) => {
-
-                        if (loading) {
-
-                            window.APP.ENV.set(`loading-btn-${ id }`, element.innerText)
-                            element.innerHTML = `<div class="spinner"></div>`
-
-                            if (disabled) {
-                                element.setAttribute('disabled', true)
-                            }
-                        }
-                        else {
-                            element.innerHTML = window.APP.ENV.get(`loading-btn-${ id }`)
-                            window.APP.ENV.remove(`loading-btn-${ id }`)
-                        }
-                    }
-                }
+                return (components[type])()
             },
 
             assets: (filename) => {
@@ -119,3 +92,26 @@ $(function () {
         }
     }
 })
+
+
+
+function buttonComponent (element) {
+    return {
+        disable: () => element.setAttribute('disabled', true),
+        enable:  () => element.setAttribute('disabled', false)
+    }
+}
+
+
+
+function inputComponent (element) {
+    return {
+        invalidate: () => {
+            element.classList.add('is-invalid')
+            element.addEventListener('change', function(e) {
+                element.classList.remove('is-invalid')
+                element.removeEventListener('change', e)
+            })
+        }
+    }
+}

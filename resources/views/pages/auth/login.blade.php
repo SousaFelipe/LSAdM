@@ -11,11 +11,15 @@
 
 @section('content')
 
+    <div class="progress">
+        <div id="loginProgress" class="progress-status"></div>
+    </div>
+
     <div class="alert-container">
         <div id="statusLoginAlert" class="alert bg-red-one" role="alert">
             <div id="statusLoginAlertBody" class="alert-body text-white"></div>
             <button class="btn-close" data-spark-close="statusLoginAlert">
-                <span class="icon-md icn-close"></span>
+                <i class="material-icons-two-tone">close</i>
             </button>
         </div>
     </div>
@@ -54,7 +58,7 @@
                 </form>
 
                 <div class="flex-row justify-between align-end mt-4">
-                    <button type="button" id="btnLogin" class="btn md bg-blue-one" onclick="login(this)">Entrar</button>
+                    <button type="button" id="btnLogin" class="btn md bg-blue-one" onclick="login()">Entrar</button>
                     <a href="#" class="fs-xs unblock">Esqueceu sua senha?</a>
                 </div>
 
@@ -68,6 +72,7 @@
 
 @section('layout-scripts')
     <script src="{{ asset('js/src/components/Alert.js') }}"></script>
+    <script src="{{ asset('js/src/components/Progress.js') }}"></script>
     <script src="{{ asset('js/src/components/Request.js') }}"></script>
     <script src="{{ asset('js/src/pages/login.js') }}"></script>
 @endsection

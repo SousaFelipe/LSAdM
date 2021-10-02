@@ -30,13 +30,14 @@
     --lsp-light:        #424250;
     --lsp-primary:      #181821;
     --lsp-secondary:    #1F1F2B;
+    --lsp-black:        #171720;
 
     --lsp-border-light: #2D2D3F;
-    --lsp-border-dark:  #101018;
+    --lsp-border-dark:  #171720;
 
     --text-primary:     #FFFFFF;
     --text-secondary:   #B6B9CE;
-    --text-tertiary:    #6F7A83;
+    --text-tertiary:    #65677e;
     --text-muted:       #505061;
 
 
@@ -62,7 +63,7 @@
     box-sizing:     border-box;
     margin:         0;
     padding:        0;
-    font-family:    'Montserrat';
+    font-family:    'Poppins';
     font-weight:    400;
 }
 
@@ -75,7 +76,7 @@ body {
     margin:             0;
     padding:            0;
     background-color:   var(--lsp-primary);
-    font-family:        'Montserrat';
+    font-family:        'Poppins';
     color:              var(--text-primary);
 }
 
@@ -84,6 +85,7 @@ input {
     color:              var(--text-secondary);
 }
 
+button,
 input,
 label,
 textarea {
@@ -240,7 +242,5 @@ th {
 
 
 
-.shadow-1 {
-    box-shadow:     1px 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius:  var(--px10);
-}
+.ff-poppins     { font-family: 'Poppins';    }
+.ff-montserat   { font-family: 'Montserrat'; }

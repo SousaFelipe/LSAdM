@@ -20,11 +20,11 @@
             <div class="sidebar">
 
                 <div class="brand">
-                    <img src="{{ asset('assets/images/brand/neptune.png') }}" alt="Light Spark" width="34" height="34">
+                    <img src="{{ asset('assets/images/brand/neptune.png') }}" alt="Light Spark" width="40" height="40">
                     <span class="user-info">
                         <div class="user-text">
-                            <span class="text-secondary fs-xs fw-5">{{ Auth::user()->firstAndLastName() }}</span>
-                            <span class="text-tertiary fs-xs fw-5">Online</span>
+                            <span class="text-secondary fs-sm fw-6 ff-poppins">{{ Auth::user()->firstName() }}</span>
+                            <span class="text-tertiary fs-xs fw-5 ff-poppins">Online</span>
                         </div>
                         <div class="avatar">
                             <img src="{{ Auth::user()->avatar() }}" alt="{{ Auth::user()->firstName() }}" width="38" height="38">

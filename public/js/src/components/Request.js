@@ -17,7 +17,6 @@ class Request {
     }
 
 
-
     get(callback) {
         $.ajax({
             method: "GET",
@@ -29,14 +28,33 @@ class Request {
     }
 
 
-    post(callback) {
+    post(callback, progress = null) {
         $.ajax({
-            method: "POST",
+
+            type: 'POST',
             url: this.url,
-            data: this.data
-        })
-        .done(async response => {
-            callback.call(this, await response)
+            data: this.data,
+
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest()
+
+                xhr.upload.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable && progress)
+                        progress.call(this, evt.loaded / evt.total)
+                }, false)
+
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable && progress)
+                        progress.call(this, evt.loaded / evt.total)
+                }, false)
+
+                return xhr
+            },
+
+            success: async function (response) {
+                const data = await response
+                callback.call(this, data)
+            }
         })
     }
 }
