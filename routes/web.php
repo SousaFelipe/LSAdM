@@ -28,7 +28,6 @@ Route::prefix('/admin')->name('admin')->middleware('auth')->group(function () {
 
     Route::prefix('/provedores')->name('.provedores')->group(function () {
         Route::get('/', [AdminController::class, 'provedores'])->name('.page');
-
         Route::get('/listar', [ProvedoresController::class, 'listar'])->name('.listar');
         Route::get('/buscar/{slug}/{id}', [ProvedoresController::class, 'buscar'])->name('.buscar');
     });
@@ -36,7 +35,6 @@ Route::prefix('/admin')->name('admin')->middleware('auth')->group(function () {
 
     Route::prefix('/tokens')->name('.tokens')->group(function () {
         Route::get('/', [AdminController::class, 'tokens'])->name('.page');
-
         Route::get('/listar', [TokensController::class, 'listar'])->name('.listar');
         Route::get('/buscar/{slug}/{id}', [TokensController::class, 'buscar'])->name('.buscar');
     });

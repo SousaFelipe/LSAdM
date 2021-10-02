@@ -51,7 +51,7 @@ class User extends AuthenticatableUser
     {
         $level = $asDefault ? 'users' : 'providers';
         $path = 'images/avatars/' . $level . '/';
-        $file = 'default.png';
+        $file = 'default.svg';
 
         $alloweds = Config::get('filesystems.alloweds');
 

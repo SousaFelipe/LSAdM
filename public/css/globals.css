@@ -35,9 +35,22 @@
     --lsp-border-dark:  #101018;
 
     --text-primary:     #FFFFFF;
-    --text-secondary:   #b6b9ce;
+    --text-secondary:   #B6B9CE;
     --text-tertiary:    #6F7A83;
-    --text-muted:       #242430;
+    --text-muted:       #505061;
+
+
+
+    --filter-blue:      invert(29%) sepia(84%) saturate(3001%) hue-rotate(214deg) brightness(100%) contrast(93%);
+    --filter-cyan:      invert(66%) sepia(70%) saturate(6531%) hue-rotate(182deg) brightness(95%) contrast(107%);
+    --filter-green:     invert(38%) sepia(50%) saturate(1757%) hue-rotate(123deg) brightness(100%) contrast(101%);
+    --filter-teal:      invert(69%) sepia(57%) saturate(2199%) hue-rotate(108deg) brightness(96%) contrast(101%);
+    --filter-yellow:    invert(77%) sepia(34%) saturate(2494%) hue-rotate(354deg) brightness(104%) contrast(101%);
+    --filter-red:       invert(23%) sepia(46%) saturate(4984%) hue-rotate(341deg) brightness(95%) contrast(80%);
+    --filter-purple:    invert(29%) sepia(17%) saturate(6460%) hue-rotate(242deg) brightness(92%) contrast(91%);
+    --filter-primary:   invert(76%) sepia(100%) saturate(2%) hue-rotate(305deg) brightness(111%) contrast(101%);
+    --filter-secondary: invert(83%) sepia(16%) saturate(249%) hue-rotate(195deg) brightness(88%) contrast(90%);
+    --filter-tertiary:  invert(47%) sepia(20%) saturate(216%) hue-rotate(165deg) brightness(95%) contrast(93%);
 
 }
 
@@ -166,8 +179,10 @@ th {
 
 
 
-.relative { position: relative; }
-.absolute { position: absolute; }
+.relative   { position: relative;   }
+.absolute   { position: absolute;   }
+
+.block      { display: block;       }
 
 
 
@@ -205,17 +220,9 @@ th {
 .grow-0 { flex-grow: 0; }
 .grow-1 { flex-grow: 1; }
 
-.relative   { position: relative; }
-.absolute   { position: absolute; }
 
 
 
-
-
-*[class*="text-"] {
-    display:    block;
-    width:      100%;
-}
 
 .text-start     { text-align: start;    }
 .text-center    { text-align: center;   }

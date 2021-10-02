@@ -24,4 +24,10 @@ class AdminController extends Controller
     {
         return view('pages.provedores.index');
     }
+
+
+    public function tokens(Request $request)
+    {
+        return view('pages.tokens.index');
+    }
 }

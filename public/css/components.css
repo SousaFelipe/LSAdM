@@ -219,3 +219,4 @@
 .text-primary   { color: var(--text-primary);   fill: val(--text-primary);   }
 .text-secondary { color: var(--text-secondary); fill: val(--text-secondary); }
 .text-tertiary  { color: var(--text-tertiary);  fill: val(--text-tertiary);  }
+.text-muted     { color: var(--text-muted);     fill: val(--text-muted);     }
