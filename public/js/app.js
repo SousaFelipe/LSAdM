@@ -5,7 +5,6 @@ $(function () {
     icons.render()
 
     if (window.APP == undefined) {
-
         window.APP = {
 
             form: (id) => {
