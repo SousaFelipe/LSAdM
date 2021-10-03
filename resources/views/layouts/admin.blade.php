@@ -56,6 +56,16 @@
 
                 <header class="header-menu-content">
                     <header class="header-menu">
+                         <div class="navbar-menu">
+                            <ul>
+                                <li class="nav-menu-item">
+                                    <i class="material-icons">first_page</i>
+                                </li>
+                                <li class="nav-menu-item">
+                                    <i class="material-icons">add</i>
+                                </li>
+                            </ul>
+                        </div>
                     </header>
                 </header>
 
