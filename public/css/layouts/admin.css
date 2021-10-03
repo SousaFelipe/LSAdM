@@ -6,7 +6,6 @@
     display:            flex;
     flex-direction:     column;
     align-items:        stretch;
-    width:              280px;
     height:             100%;
     background-color:   var(--lsp-secondary);
     box-shadow:         0 0 3px 0 var(--lsp-border-dark);
@@ -121,4 +120,20 @@
 
 #main {
     border: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1366.98px) {
+    .sidebar {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    .sidebar {
+        width: 280px;
+    }
 }
