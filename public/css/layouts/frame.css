@@ -7,7 +7,8 @@
     display:            flex;
     justify-content:    space-between;
     align-items:        center;
-    padding:            20px 20px;
+    padding-left:       20px;
+    padding-right:      20px;
     border-bottom:      1px solid var(--lsp-border-light);
 }
 
@@ -22,7 +23,6 @@
     align-items:        center;
     flex-grow:          1;
     height:             100%;
-    padding-top:        120px;
     padding-bottom:     30px;
 }
 
@@ -33,6 +33,34 @@
     align-items:        stretch;
     height:             100%;
     padding-top:        30px;
+}
+
+
+
+
+
+@media screen and (max-width: 1116.98px) {
+
+    .frame-top {
+        padding-top:    20px;
+        padding-bottom: 10px;
+    }
+
+    .main-container {
+        padding-top: 100px;
+    }
+}
+
+@media screen and (min-width: 1117px) {
+
+    .frame-top {
+        padding-top:    20px;
+        padding-bottom: 20px;
+    }
+
+    .main-container {
+        padding-top: 120px;
+    }
 }
 
 
