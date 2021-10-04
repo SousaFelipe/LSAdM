@@ -25,13 +25,7 @@ let login = function () {
 
     if (credentials) {
         new Request('auth', credentials).post(
-            response => {
-                handleAuthentication(response)
-                progressBar.reset()
-            },
-            progress => {
-                progressBar.load(progress * 100)
-            }
+            response => handleAuthentication(response)
         )
     }
     else {

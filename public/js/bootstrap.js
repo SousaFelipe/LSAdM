@@ -1,6 +1,27 @@
 
 
 
+$('.alert').hide(() => {
+    $('.alert-container').css('margin-top', 0)
+})
+
+
+
+$(document).ajaxStart(function () {
+    Pace.restart()
+})
+.ajaxStop(function () {
+    Pace.stop()
+})
+.ajaxError(function (event, request, settings) {
+    Pace.stop()
+})
+.ajaxComplete(function (event, request, settings) {
+    Pace.stop()
+})
+
+
+
 $(function () {
     icons.render()
 
@@ -11,14 +32,12 @@ $(function () {
                 let element = document.getElementById(id)
 
                 return {
-                    submit: () => {
-                        element.submit()
-                    },
+                    submit: () => element.submit()
                 }
             },
 
             component: (type, id) => {
-                const element = document.getElementById(id)
+                let element = document.getElementById(id)
 
                 const components = {
                     'button':   () => buttonComponent(element),
@@ -38,47 +57,34 @@ $(function () {
 
             mask: (clean) => {
                 return {
-                    cell: () => {
-                        return clean.replace(/\D/g, '').replace(/^(\d{2})(\d{1})(\d{4})(\d{4})?/, '($1) $2 $3-$4')
-                    },
-
-                    cep: () => {
-                        return clean.replace(/\D/g, '').replace(/^(\d{5})(\d{3})?/, '$1-$2')
-                    },
-
-                    cnpj: (format = '$1.$2.$3/$4-$5') => {
-                        return clean.replace(/\D/g, '').replace(/^(\d{2})(\d{3})?(\d{3})?(\d{4})?(\d{2})?/, format)
-                    },
-
-                    date: (joiner = '/') => {
-                        return clean.split('-').reverse().join(joiner)
-                    }
+                    cell: () => clean.replace(/\D/g, '').replace(/^(\d{2})(\d{1})(\d{4})(\d{4})?/, '($1) $2 $3-$4'),
+                    cep: () => clean.replace(/\D/g, '').replace(/^(\d{5})(\d{3})?/, '$1-$2'),
+                    cnpj: (format = '$1.$2.$3/$4-$5') => clean.replace(/\D/g, '').replace(/^(\d{2})(\d{3})?(\d{3})?(\d{4})?(\d{2})?/, format),
+                    date: (joiner = '/') => clean.split('-').reverse().join(joiner)
                 }
             },
 
             url: (level = false) => {
                 return {
 
-                    web: (endpoint) => {
-                        return level
+                    web: (endpoint) => (
+                        level
                             ? `${ config.webUri }/${ level }/${ endpoint }`
                             : `${ config.webUri }/${ endpoint }`
-                    },
+                    ),
 
-                    api: (endpoint) => {
-                        return level
+                    api: (endpoint) => (
+                        level
                             ? `${ config.apiUri }/${ level }/${ endpoint }`
                             : `${ config.apiUri }/${ endpoint }`
-                    }
+                    )
                 }
             }
         }
 
         window.APP.ENV = {
 
-            get: (name) => {
-                return window.APP.ENV[name] ? window.APP.ENV[name] : { }
-            },
+            get: (name) => window.APP.ENV[name] ? window.APP.ENV[name] : { },
 
             set: (name, value) => {
                 window.APP.ENV[name] = value

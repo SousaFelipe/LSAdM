@@ -19,12 +19,19 @@
 
     --lsp-yellow-one:   #FFC107;
     --lsp-yellow-two:   rgba(255, 193, 7, 0.25) !important;
+    --lsp-yellow-tree:  #C7990E;
+    --lsp-yellow-four:  #8B6900;
 
     --lsp-red-one:      #DC3545;
     --lsp-red-two:      rgba(220, 53, 69, 0.25) !important;
+    --lsp-red-tree:     #BB1D2D;
+    --lsp-red-four:     #9B0C1A;
 
     --lsp-purple-one:   #6F42C1;
     --lsp-purple-two:   rgba(111, 66, 193, 0.25) !important;
+
+    --lsp-light-one:    rgba(255, 255, 255, 0.5);
+    --lsp-light-two:    rgba(255, 255, 255, 0.0) !important;
 
     --lsp-white:        #FFFFFF;
     --lsp-light:        #424250;
@@ -176,6 +183,9 @@ th {
 
 .bg-purple-one  { background-color: var(--lsp-purple-one);  }
 .bg-purple-two  { background-color: var(--lsp-purple-two);  }
+
+.bg-light-one  { background-color: var(--lsp-light-one);  }
+.bg-light-two  { background-color: var(--lsp-light-two);  }
 
 
 

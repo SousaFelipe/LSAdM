@@ -16,8 +16,10 @@ $.extend($.fn.dataTable.defaults, {
 })
 
 const table = $('#provedores').DataTable({
+    order: [[ 1, 'asc' ]],
     columnDefs: [
-        { targets: [0, 1, 2], className: 'text-start' }
+        { targets: [0, 1, 2], className: 'text-start' },
+        { targets: [3], className: 'flex-row justify-end align-center', orderable: false }
     ]
 })
 
@@ -34,7 +36,8 @@ $(function () {
                 table.row.add([
                     window.APP.mask(provedor.cnpj).cnpj(),
                     provedor.nome_fantasia,
-                    `${ provedor.logradouro }, ${ provedor.municipio }-${ provedor.uf }`
+                    `${ provedor.logradouro }, ${ provedor.municipio }-${ provedor.uf }`,
+                    (`<button type="button" class="btn sm bg-light-two"><i class="material-icons-two-tone fs-lg">open_in_new</i></button>`)
                 ])
 
                 table.draw()

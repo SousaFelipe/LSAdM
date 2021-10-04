@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+
     @section('title', 'Login')
+
 
     @include('includes.head')
 
+
     <body>
 
-        <div class="flex-col centered w-100 h-100">
+        <div id="content" class="flex-col align-center w-100 h-100">
             @yield('content')
         </div>
 

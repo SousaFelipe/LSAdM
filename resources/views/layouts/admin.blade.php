@@ -61,9 +61,6 @@
                                 <li class="nav-menu-item">
                                     <i class="material-icons">first_page</i>
                                 </li>
-                                <li class="nav-menu-item">
-                                    <i class="material-icons">add</i>
-                                </li>
                             </ul>
                         </div>
                     </header>
@@ -81,7 +78,7 @@
 
         @include('includes.scripts')
 
-        <script src="{{ asset('js/src/layouts/admin.js') }}"></script>
+        <script src="{{ asset('js/app/layouts/admin.js') }}"></script>
 
     </body>
 

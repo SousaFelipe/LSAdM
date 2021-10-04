@@ -30,7 +30,7 @@
 
         @yield('frame-scripts')
 
-        <script src="{{ asset('js/src/layouts/frame.js') }}"></script>
+        <script src="{{ asset('js/app/layouts/frame.js') }}"></script>
 
     </body>
 

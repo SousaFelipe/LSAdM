@@ -7,6 +7,7 @@ class Alert {
     constructor (id, timeout = 0) {
 
         this.timeout = timeout
+        this.container = document.querySelectorAll(`[data-spark-container-to='${ id }']`)[0]
         this.alert = document.getElementById(id)
         this.alertBody = document.getElementById(`${ id }Body`)
 
@@ -23,17 +24,25 @@ class Alert {
 
 
     hide () {
-        this.alertBody.innerHTML = ''
+        let alertBody = this.alertBody
+
         $(this.alert).fadeOut('fast', function () {
             $(this).css('display', 'none')
+            alertBody.innerHTML = ''
         })
     }
 
 
     display (msg) {
+        let self = this
         this.alertBody.innerHTML = msg
+
         $(this.alert).fadeIn('fast', function() {
             $(this).css('display', 'flex')
         })
+
+        if (this.timeout > 0) {
+            setTimeout(() => { self.hide() }, this.timeout * 1000)
+        }
     }
 }

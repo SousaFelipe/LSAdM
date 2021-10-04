@@ -11,14 +11,10 @@
 
 @section('content')
 
-    <div class="progress">
-        <div id="loginProgress" class="progress-status"></div>
-    </div>
-
-    <div class="alert-container">
-        <div id="statusLoginAlert" class="alert bg-red-one" role="alert">
+    <div class="alert-container" data-spark-container-to="statusLoginAlert">
+        <div id="statusLoginAlert" class="alert danger" role="alert">
             <div id="statusLoginAlertBody" class="alert-body text-white"></div>
-            <button class="btn-close" data-spark-close="statusLoginAlert">
+            <button class="btn-close-widget" data-spark-close="statusLoginAlert">
                 <i class="material-icons-two-tone">close</i>
             </button>
         </div>
@@ -71,8 +67,8 @@
 
 
 @section('layout-scripts')
-    <script src="{{ asset('js/src/components/Alert.js') }}"></script>
-    <script src="{{ asset('js/src/components/Progress.js') }}"></script>
-    <script src="{{ asset('js/src/components/Request.js') }}"></script>
-    <script src="{{ asset('js/src/pages/login.js') }}"></script>
+    <script src="{{ asset('js/http/Request.js') }}"></script>
+    <script src="{{ asset('js/app/components/Alert.js') }}"></script>
+    <script src="{{ asset('js/app/components/Progress.js') }}"></script>
+    <script src="{{ asset('js/app/pages/login.js') }}"></script>
 @endsection

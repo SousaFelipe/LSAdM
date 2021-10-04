@@ -20,7 +20,7 @@
 
     <link href="{{ asset('vendor/bootstrap/css/bootstrap-grid.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/datatables/dataTables.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('vendor/pace/minimal.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom/scrollbar.css') }}" rel="stylesheet">
 
     @yield('head-styles')

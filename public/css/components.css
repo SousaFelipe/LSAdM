@@ -1,43 +1,74 @@
 
 
 
-
 .alert-container {
     position:           absolute;
     display:            flex;
     justify-content:    center;
     width:              100%;
+    margin-top:         -200px;
     padding-top:        30px;
 }
 
 .alert {
-    display:            none;
-    flex-direction:     row;
+    display:            flex;
     justify-content:    flex-start;
     align-items:        center;
-    padding:            var(--px20);
-    border-radius:      var(--px8);
+    padding:            10px 10px 10px 20px;
+    border-radius:      8px;
 }
+
+.alert > button.btn-close-widget {
+    transition: background-color 0.2s ease-in;
+    cursor:     pointer;
+    *cursor:    hand;
+}
+
+
+.alert.warning,
+.alert.warning > button {
+    background-color: var(--lsp-yellow-one);
+}
+
+.alert.warning > button > i {
+    transition: color 0.2s ease-in;
+    color:      var(--lsp-yellow-four);
+}
+
+.alert.warning > button:hover { background-color: var(--lsp-yellow-tree); }
+
+
+.alert.danger,
+.alert.danger > button {
+    background-color: var(--lsp-red-one);
+}
+
+.alert.danger > button > i {
+    transition: color 0.2s ease-in;
+    color:      var(--lsp-red-four);
+}
+
+.alert.danger > button:hover { background-color: var(--lsp-red-tree); }
 
 
 
 
 
 .badge {
-    font-weight: 600;
+    box-sizing:     border-box;
+    clear:          both;
+    font-weight:    600;
 }
 
 
-.badge.blue,
+.badge.blue     { background-color: var(--lsp-blue-two); }
 .badge.blue > * {
-    background-color: var(--lsp-blue-two);
     color:  var(--lsp-blue-one);
     fill:   var(--lsp-blue-ene);
 }
 
-.badge.cyan,
+.badge.cyan     { background-color: var(--lsp-cyan-two); }
 .badge.cyan > * {
-    background-color: var(--lsp-cyan-two);
     color:  var(--lsp-cyan-one);
     fill:   var(--lsp-cyan-one);
 }
@@ -108,20 +139,60 @@
     font-family:        'Montserrat';
     font-weight:        500;
     cursor:             pointer;
+    transition:         background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
+.btn.sm {
+    min-height:     28px;
+    max-height:     28px;
+    padding:        4px;
+    border-radius:  4px;
+}
+
+.btn,
 .btn.md {
-    padding:        0.74em 1.5em;
-    border-radius:  0.5em;
+    min-height:     32px;
+    max-height:     32px;
+    padding:        4px 12px;
+    border-radius:  4px;
+}
+
+.btn.lg {
+    min-height:     42px;
+    max-height:     42px;
+    padding:        8px 20px;
+    border-radius:  8px;
 }
 
 .btn.bg-blue-one       { color: white; fill: white; }
 .btn.bg-blue-one:hover {
-    transition:         background-color 0.25s ease-in;
     background-color:   #2C80FF;
 }
 
 .btn.bg-blue-two { color: var(--lsp-blue-one); fill: var(--lsp-blue-one); }
+
+
+.btn.bg-light-one       { color: var(--text-secondary); fill: var(--text-secondary); }
+.btn.bg-light-one:hover { background-color: white; }
+
+.btn.bg-light-two       { color: var(--text-tertiary); }
+.btn.bg-light-two:hover { color: var(--text-secondary); }
+
+
+
+
+
+.btn-close-widget {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    width:              32px;
+    height:             32px;
+    margin-left:        20px;
+    border-radius:      4px;
+    border:             none;
+    outline:            none;
+}
 
 
 
@@ -189,49 +260,6 @@
     font-size:      var(--fs-xxs);
     color:          var(--text-secondary);
     padding-top:    0.5em;
-}
-
-
-
-
-.progress {
-    position:   absolute;
-    width:      100%;
-    top:        0;
-}
-
-.progress-status {
-    position:           relative;
-    display:            block;
-    width:              0%;
-    height:             4px;
-    background-color:   var(--lsp-blue-one);
-    text-align:         center;
-    transition:         width .3s;
-    animation:          borealisBar 2s linear infinite;
-}
-
-@keyframes borealisBar {
-    0% {
-        left:0%;
-        right:100%;
-        width:0%;
-    }
-    10% {
-        left:0%;
-        right:75%;
-        width:25%;
-    }
-    90% {
-        right:0%;
-        left:75%;
-        width:25%;
-    }
-    100% {
-        left:100%;
-        right:0%;
-        width:0%;
-    }
 }
 
 
