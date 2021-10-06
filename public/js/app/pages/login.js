@@ -43,7 +43,7 @@ let getValidated = function (email, password) {
 
 
 
-let handleAuthentication = function (response, target) {
+let handleAuthentication = function (response) {
     if (response.auth === true) {
         window.APP.form('formSignIn').submit()
     }
