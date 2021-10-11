@@ -43,5 +43,11 @@ $(function () {
                 table.draw()
             })
         })
-
 })
+
+
+
+function newProvedorModal() {
+    new Modal('new-provedor-modal')
+        .show()
+}

@@ -13,18 +13,16 @@ $(document).ajaxStart(function () {
 .ajaxStop(function () {
     Pace.stop()
 })
-.ajaxError(function (event, request, settings) {
+.ajaxError(function () {
     Pace.stop()
 })
-.ajaxComplete(function (event, request, settings) {
+.ajaxComplete(function () {
     Pace.stop()
 })
 
 
 
 $(function () {
-    icons.render()
-
     if (window.APP == undefined) {
         window.APP = {
 
@@ -78,21 +76,6 @@ $(function () {
                             ? `${ config.apiUri }/${ level }/${ endpoint }`
                             : `${ config.apiUri }/${ endpoint }`
                     )
-                }
-            }
-        }
-
-        window.APP.ENV = {
-
-            get: (name) => window.APP.ENV[name] ? window.APP.ENV[name] : { },
-
-            set: (name, value) => {
-                window.APP.ENV[name] = value
-            },
-
-            remove: (name) => {
-                if (window.APP.ENV[name]) {
-                    delete window.APP.ENV[name]
                 }
             }
         }

@@ -5,6 +5,7 @@ class Modal {
 
 
     constructor (id, isFrame = false) {
+        this.id = id
 
         this.element = isFrame
             ? parent.document.getElementById(id)
@@ -21,10 +22,12 @@ class Modal {
 
     bindAction () {
         const self = this
-        const btnClose = this.modalHeader.childNodes[1]
+        const closes = $(`*[data-modal-close="${ this.id }"]`)
 
-        $(btnClose).on('click', function(e) {
-            self.close()
+        $(closes).each(function () {
+            $(this).on('click', function(e) {
+                self.close()
+            })
         })
     }
 

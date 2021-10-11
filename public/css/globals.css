@@ -47,6 +47,9 @@
     --text-tertiary:    #65677e;
     --text-muted:       #505061;
 
+    --dark:             #0A0A0F;
+    --black:            #06060A;
+
 
 
     --filter-blue:      invert(29%) sepia(84%) saturate(3001%) hue-rotate(214deg) brightness(100%) contrast(93%);

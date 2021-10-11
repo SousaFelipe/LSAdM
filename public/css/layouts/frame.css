@@ -67,7 +67,7 @@
 
 
 
-@media screen and (max-width: 1359.98px) {
+@media screen and (max-width: 1365.98px) {
 
     .main-container {
         padding-left:   30px;
@@ -81,7 +81,7 @@
 }
 
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1366px) {
 
     .main-container {
         padding-left:   0;
@@ -90,6 +90,6 @@
 
     .frame-top,
     .main-content {
-        width: 1300px;
+        width: 1056px;
     }
 }

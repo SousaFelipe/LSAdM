@@ -6,7 +6,11 @@
 
 
     @section('head-styles')
+
         <link rel="stylesheet" href="{{ asset('css/layouts/admin.css') }}">
+
+        @yield('layout-styles')
+
     @endsection
 
 
@@ -35,24 +39,27 @@
                 <nav class="mt-4">
                     <span class="sidebar-menu">MENU</span>
                     <ul>
-                        <li class="nav-item active" data-nav-item="dashboard">
-                            <i class="material-icons-two-tone">dashboard</i>
-                            Dashboard
+                        <li class="nav-item @yield('dashboard')" data-nav-item="dashboard">
+                            <a href="{{ route('admin.dashboard.page') }}">
+                                <i class="material-icons-two-tone">dashboard</i> Dashboard
+                            </a>
                         </li>
-                        <li class="nav-item" data-nav-item="provedores">
-                            <i class="material-icons-two-tone">public</i>
-                            Provedores
+                        <li class="nav-item @yield('provedores')" data-nav-item="provedores">
+                            <a href="{{ route('admin.provedores.page') }}">
+                                <i class="material-icons-two-tone">public</i> Provedores
+                            </a>
                         </li>
-                        <li class="nav-item" data-nav-item="tokens">
-                            <i class="material-icons-two-tone">token</i>
-                            Tokens
+                        <li class="nav-item @yield('tokens')" data-nav-item="tokens">
+                            <a href="{{ route('admin.tokens.page') }}">
+                                <i class="material-icons-two-tone">token</i> Tokens
+                            </a>
                         </li>
                     </ul>
                 </nav>
 
             </div>
 
-            <div class="flex-row grow-1 relative">
+            <div id="app" class="flex-row grow-1 relative">
 
                 <header class="header-menu-content">
                     <header class="header-menu">
@@ -66,9 +73,20 @@
                     </header>
                 </header>
 
-                <iframe id="main" src="{{ route('admin.dashboard.page') }}" width="100%" height="100%"></iframe>
+                <div class="main-container">
+
+                    <div class="frame-top">
+                        @yield('frame-top')
+                    </div>
+
+                    <div class="main-content">
+                        @yield('content')
+                    </div>
+                </div>
 
             </div>
+
+            @yield('modal-container')
 
         </main>
 
@@ -77,8 +95,7 @@
         </form>
 
         @include('includes.scripts')
-
-        <script src="{{ asset('js/app/layouts/admin.js') }}"></script>
+        @yield('layout-scripts')
 
     </body>
 
